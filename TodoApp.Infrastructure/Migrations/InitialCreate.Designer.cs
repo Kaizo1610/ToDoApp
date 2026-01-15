@@ -10,7 +10,7 @@ using TodoApp.Infrastructure;
 namespace TodoApp.Infrastructure.Migrations
 {
     [DbContext(typeof(TodoDbContext))]
-    [Migration("20260116000000_InitialCreate")]
+    [Migration("InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
