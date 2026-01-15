@@ -1,0 +1,93 @@
+@host = http://localhost:5035
+@endpoint = {{host}}/api/todos
+@contentType = application/json
+
+### 🔍 Get all todos
+GET {{endpoint}}
+Accept: {{contentType}}
+
+###
+
+### ✅ Create a new high priority todo
+POST {{endpoint}}
+Content-Type: {{contentType}}
+
+{
+  "title": "Buy groceries",
+  "description": "Milk, eggs, bread, cheese",
+  "priority": "high",
+  "dueDate": "2026-01-20T00:00:00",
+  "isCompleted": false
+}
+
+###
+
+### ✅ Create medium priority todo
+POST {{endpoint}}
+Content-Type: {{contentType}}
+
+{
+  "title": "Complete project documentation",
+  "description": "Write API documentation and user guide",
+  "priority": "medium",
+  "dueDate": "2026-01-18T00:00:00",
+  "isCompleted": false
+}
+
+###
+
+### ✅ Create low priority todo
+POST {{endpoint}}
+Content-Type: {{contentType}}
+
+{
+  "title": "Read a book",
+  "description": "Fiction or science fiction book",
+  "priority": "low",
+  "dueDate": "2026-02-01T00:00:00",
+  "isCompleted": false
+}
+
+###
+
+### 🔍 Get a specific todo
+### NOTE: Replace ID with actual todo ID from a Create response
+GET {{endpoint}}/550e8400-e29b-41d4-a716-446655440000
+Accept: {{contentType}}
+
+###
+
+### ✏️ Update a todo with new details
+### NOTE: Replace ID with actual todo ID
+PUT {{endpoint}}/550e8400-e29b-41d4-a716-446655440000
+Content-Type: {{contentType}}
+
+{
+  "title": "Buy groceries - Updated",
+  "description": "Added cheese and yogurt to the list",
+  "priority": "medium",
+  "dueDate": "2026-01-21T00:00:00",
+  "isCompleted": false
+}
+
+###
+
+### ✅ Mark a todo as completed
+### NOTE: Replace ID with actual todo ID
+PUT {{endpoint}}/550e8400-e29b-41d4-a716-446655440000
+Content-Type: {{contentType}}
+
+{
+  "title": "Buy groceries",
+  "description": "Milk, eggs, bread, cheese",
+  "priority": "high",
+  "dueDate": "2026-01-20T00:00:00",
+  "isCompleted": true
+}
+
+###
+
+### ❌ Delete a todo
+### NOTE: Replace ID with actual todo ID
+DELETE {{endpoint}}/550e8400-e29b-41d4-a716-446655440000
+Accept: {{contentType}}
