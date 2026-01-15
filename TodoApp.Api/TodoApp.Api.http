@@ -51,14 +51,13 @@ Content-Type: {{contentType}}
 ###
 
 ### 🔍 Get a specific todo
-### NOTE: Replace ID with actual todo ID from a Create response
+
 GET {{endpoint}}/550e8400-e29b-41d4-a716-446655440000
 Accept: {{contentType}}
 
 ###
 
 ### ✏️ Update a todo with new details
-### NOTE: Replace ID with actual todo ID
 PUT {{endpoint}}/550e8400-e29b-41d4-a716-446655440000
 Content-Type: {{contentType}}
 
@@ -73,7 +72,6 @@ Content-Type: {{contentType}}
 ###
 
 ### ✅ Mark a todo as completed
-### NOTE: Replace ID with actual todo ID
 PUT {{endpoint}}/550e8400-e29b-41d4-a716-446655440000
 Content-Type: {{contentType}}
 
@@ -88,6 +86,5 @@ Content-Type: {{contentType}}
 ###
 
 ### ❌ Delete a todo
-### NOTE: Replace ID with actual todo ID
 DELETE {{endpoint}}/550e8400-e29b-41d4-a716-446655440000
 Accept: {{contentType}}

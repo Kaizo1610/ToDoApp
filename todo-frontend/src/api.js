@@ -1,6 +1,5 @@
 import axios from "axios";
 
-// Your backend API URL (update if using a different port)
 const API_URL = "https://localhost:5001/api/todos";
 
 // API functions

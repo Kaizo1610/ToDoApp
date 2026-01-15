@@ -4,7 +4,6 @@ using TodoApp.Infrastructure;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
@@ -15,10 +14,8 @@ var connectionString = builder.Configuration.GetConnectionString("DefaultConnect
 builder.Services.AddDbContext<TodoDbContext>(options =>
     options.UseSqlite(connectionString));
 
-// Register repository pattern for dependency injection
 builder.Services.AddScoped<ITodoRepository, TodoRepository>();
 
-// Setup CORS to allow requests from React frontend
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowReactApp", policy =>
@@ -36,7 +33,6 @@ builder.Services.AddCors(options =>
 
 var app = builder.Build();
 
-// Auto-run database migrations when app starts
 using (var scope = app.Services.CreateScope())
 {
     var db = scope.ServiceProvider.GetRequiredService<TodoDbContext>();

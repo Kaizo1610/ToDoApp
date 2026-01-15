@@ -11,7 +11,6 @@ namespace TodoApp.Domain.Entities
         public DateTime? UpdatedAt { get; set; }
         public DateTime? DueDate { get; set; }
 
-        // Need this for EF Core
         public TodoItem() { }
 
         public TodoItem(string title, string? description = null, DateTime? dueDate = null, string priority = "medium")
@@ -24,8 +23,7 @@ namespace TodoApp.Domain.Entities
             DueDate = dueDate;
             Priority = priority;
         }
-
-        // Update the todo with new values
+        
         public void Update(string title, string? description, DateTime? dueDate, string priority, bool isCompleted)
         {
             if (string.IsNullOrWhiteSpace(title))

@@ -18,9 +18,6 @@ namespace TodoApp.Api.Controllers
             _logger = logger;
         }
 
-        /// <summary>
-        /// Get all todos from the database
-        /// </summary>
         [HttpGet]
         [Produces(typeof(IEnumerable<TodoResponseDto>))]
         public async Task<IActionResult> GetAll()
@@ -39,9 +36,6 @@ namespace TodoApp.Api.Controllers
             }
         }
 
-        /// <summary>
-        /// Get a specific todo by its ID
-        /// </summary>
         [HttpGet("{id}")]
         [Produces(typeof(TodoResponseDto))]
         public async Task<IActionResult> GetById(Guid id)
@@ -65,9 +59,6 @@ namespace TodoApp.Api.Controllers
             }
         }
 
-        /// <summary>
-        /// Create a brand new todo
-        /// </summary>
         [HttpPost]
         [Consumes("application/json")]
         [Produces(typeof(TodoResponseDto))]
@@ -109,9 +100,6 @@ namespace TodoApp.Api.Controllers
             }
         }
 
-        /// <summary>
-        /// Update an existing todo - change anything you want
-        /// </summary>
         [HttpPut("{id}")]
         [Consumes("application/json")]
         public async Task<IActionResult> Update(Guid id, [FromBody] UpdateTodoDto updateDto)
@@ -158,9 +146,6 @@ namespace TodoApp.Api.Controllers
             }
         }
 
-        /// <summary>
-        /// Delete a todo - goodbye task!
-        /// </summary>
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(Guid id)
         {
@@ -185,9 +170,6 @@ namespace TodoApp.Api.Controllers
             }
         }
 
-        /// <summary>
-        /// Convert database todo to API response
-        /// </summary>
         private TodoResponseDto MapToDto(TodoItem todo)
         {
             return new TodoResponseDto
