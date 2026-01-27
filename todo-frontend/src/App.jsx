@@ -15,9 +15,9 @@ function App() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const [successMessage, setSuccessMessage] = useState("");
-  const [filterStatus, setFilterStatus] = useState("all");
+  const [filterStatus, _setFilterStatus] = useState("all");
   const [searchTerm, setSearchTerm] = useState("");
-  const [sortBy, setSortBy] = useState("dateAdded");
+  const [sortBy, _setSortBy] = useState("dateAdded");
 
   useEffect(() => {
     loadTodos();
